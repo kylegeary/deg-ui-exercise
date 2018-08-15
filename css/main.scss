@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin');
+
+$colors: (
+    darkBlue: #006595,
+    lightBlue: #25aae1,
+    darkGray: #858585,
+    lightGray: #f8f8f8,
+    black: #000000,
+    brown: #695e4a,
+    green: #5ab44b,
+    white: #ffffff
+);
+
+body,
+html {
+    height: 100%;
+};
+
+body {
+    font-family: "Cabin", arial, sans-serif;
+    margin: 0;
+    background-color: map-get($colors, white);
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
+};
