@@ -11,16 +11,64 @@ $colors: (
     white: #ffffff
 );
 
-body,
-html {
-    height: 100%;
+@media screen and (max-width: 500px) {
+    margin-left:auto;
+    margin-right:auto;
 };
+
+@media screen and (min-width: 501px) {
+    body {
+    margin-left:auto;
+    margin-right:auto;
+    }
+};
+
+@media screen and (min-width: 950px) {
+    .zipCode {
+
+        margin-left: auto;
+        margin-right: auto;
+    };
+}
+
+html,
+body {
+    height: 100%;
+    margin:0;
+}
 
 body {
     font-family: "Cabin", arial, sans-serif;
-    margin: 0;
-    background-color: map-get($colors, white);
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(3,1fr);
 };
+
+hr {
+    box-shadow: #000000;
+}
+
+.container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr 2fr;
+    grid-gap: 1rem;
+}
+
+.hero{
+    justify-self: center;
+}
+.navBar {
+    max-width: 100%;
+    display: block;
+    justify-self: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.zipCode {
+    background-color: map-get($colors, lightGray);
+
+}
+
+#hero {
+    height: auto;
+    max-width: 100%;
+}
