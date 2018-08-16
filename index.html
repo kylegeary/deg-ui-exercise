@@ -15,23 +15,23 @@
         <div class="container">
             <div class="nav">
                 <img class="navBar" src="assets/gradient.png" alt="gradient line">
-                <svg class="logo" src="assets/logo.svg" alt="Deterson Health Centers logo"></svg>
                 <hr>
             </div>
-            <div class="hero"><img src="assets/hospital.png" alt="hospital" id="hero"></div>
-            <div class="zipCode">
-                <Label>ZIP Code</Label><br>
-                <input type="text" pattern="[0-9]{5}" id="zipCodeField" title="Five digit zip code" />
+            <div class="hero">
+                <img src="assets/hospital.png" alt="hospital" id="heroImage">
+            </div>
+            <div class="zipCodeSearch">
+                <div id="zipCodeInput">
+                    <Label>ZIP Code</Label><br>
+                    <input type="text" pattern="[0-9]{5}" id="zipCodeField" title="Five digit zip code" />
+                    <input type="button" id="zipCodeSubmit" value="Search" onclick="validateZipCode()"></button>
+                </div>
             </div>
             <div class="subContainer">
                 <div class="filter"></div>
                 <div class="results"></div>
             </div>
         </div>
-
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
         <script src="js/main.js" async defer></script>
     </body>
 </html>
