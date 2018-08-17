@@ -2,36 +2,47 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>DEG Technical Exercise</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="nav">
-                <img class="navBar" src="assets/gradient.png" alt="gradient line">
-                <hr>
-            </div>
-            <div class="hero">
-                <img src="assets/hospital.png" alt="hospital" id="heroImage">
-            </div>
-            <div class="zipCodeSearch">
-                <div id="zipCodeInput">
-                    <Label>ZIP Code</Label><br>
-                    <input type="text" pattern="[0-9]{5}" id="zipCodeField" title="Five digit zip code" />
-                    <input type="button" id="zipCodeSubmit" value="Search" onclick="validateZipCode()"></button>
-                </div>
-            </div>
-            <div class="subContainer">
-                <div class="filter"></div>
-                <div class="results"></div>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DEG Technical Exercise</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav">
+            <img class="navBar" src="assets/gradient.png" alt="gradient line">
+            <hr>
+        </div>
+        <div class="hero">
+            <img src="assets/hospital.png" alt="hospital" id="heroImage">
+        </div>
+        <div class="zipCodeSearch">
+            <div id="zipCodeInput">
+                <Label>Zip Code</Label><br>
+                <input type="text" pattern="[0-9]{5}?$" id="zipCodeField" title="Five digit zip code" />
+                <input type="button" id="zipCodeSubmit" value="Search" onclick="validateZipCode()">
             </div>
         </div>
-        <script src="js/main.js" async defer></script>
-    </body>
+        <div class="subContainer">
+            <div class="filter">
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="distanceRange">
+                </div>
+            </div>
+            <div class="results">
+                <p>asdfa</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js" async defer></script>
+</body>
+
 </html>

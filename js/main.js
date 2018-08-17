@@ -1,9 +1,19 @@
-const zipCode = document.getElementById("zipCodeField").value;
-const parsedZipCode = parseInt(zipCode);
-function validateZipCode () {
-    if ((zipCode.length == 5) && (isNaN(parsedZipCode) == false)) {
-        console.log("you\'re good.");
+
+const zipCodeInput = document.getElementById("zipCodeField");
+zipCodeInput.addEventListener('keydown', function (event) {
+    if (event.code == "Enter") {
+        validateZipCode();
+    }
+});
+
+
+function validateZipCode() {
+    let zipCode = document.getElementById("zipCodeField").value;
+    let valid = /^[0-9]{5}?$/.test(zipCode);
+    if (valid){
+        alert("Okay, we're cool.")
     } else {
-        console.log("That's not a number, yo.")
+        alert("Get your shit together, bro.")
+
     }
 }
