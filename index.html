@@ -25,20 +25,15 @@
             <img src="assets/hospital.png" alt="hospital" id="heroImage">
         </div>
         <div class="zipCodeSearch">
-            <div id="zipCodeInput">
-                <Label>Zip Code</Label><br>
-                <input type="text" pattern="[0-9]{5}?$" id="zipCodeField" title="Five digit zip code" />
-                <input type="button" id="zipCodeSubmit" value="Search" onclick="validateZipCode()">
-            </div>
+            <label>Zip Code</label>
+            <input type="text" pattern="[0-9]{5}?$" id="zipCodeField" title="Five digit zip code" />
+            <input type="button" id="zipCodeSubmit" value="Search" onclick="validateZipCode()">
         </div>
         <div class="subContainer">
             <div class="filter">
-                <div class="slidecontainer">
-                    <input type="range" min="1" max="100" value="50" class="slider" id="distanceRange">
-                </div>
+                <input type="range" min="5" max="30" value="20" step="5"/>
             </div>
             <div class="results">
-                <p>asdfa</p>
             </div>
         </div>
     </div>
