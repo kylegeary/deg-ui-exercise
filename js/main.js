@@ -27,6 +27,7 @@ function validateZipCode() {
     } else {
         displayDistance.innerText = "";
     }
+    getDoctors();
 }
 
 function displayDistance() {
@@ -43,6 +44,7 @@ function displayDistance() {
     } else {
     displayDistance.innerText = "";
     }
+    getDoctors();
 }
 
 const form = document.querySelector("form");
@@ -56,6 +58,7 @@ form.addEventListener("input", function (event) {
         output = entry[1] + "\r";
     };
     event.preventDefault();
+    getDoctors();
 }, false);
 
 /*
@@ -66,3 +69,27 @@ function displayResults() {
     resultAmountText.innerText = "Total Results: " + ;
 }
 */
+
+function getDoctors() {
+    fetch("doctors.json")
+        .then((res) => res.json())
+        .then((data) => {
+            let output = "<p>doctors</p>";
+            data.forEach(function(){
+                output +=`
+                <ul>
+                    <li>${results[i].fullName}</li>
+                    <li>${doctor.specialities}</li>
+                    <li>${doctor.locations.name}</li>
+                    <li>${doctor.locations.distance}</li>
+                    <li>${doctor.gender}</li>
+                </ul>
+                `;
+            })
+            document.getElementById('doctors').innerHTML += output;
+        })
+    }
+
+
+
+
