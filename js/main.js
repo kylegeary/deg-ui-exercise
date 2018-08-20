@@ -58,10 +58,11 @@ form.addEventListener("input", function (event) {
     event.preventDefault();
 }, false);
 
-
+/*
 function displayResults() {
     let resultAmount = ;
     let resultAmountText = document.getElementById("resultAmountText");
 
     resultAmountText.innerText = "Total Results: " + ;
 }
+*/
