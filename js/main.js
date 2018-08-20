@@ -19,12 +19,13 @@ function validateZipCode() {
     let range = document.getElementById("mileRange").value;
     let valid = /^[0-9]{5}?$/.test(zipCode);
     if (valid){
-        alert("Okay, we're cool.")
-        displayDistance.innerText = "Current: " + range + " miles from " + zipCode;
+        if (range == 30) {
+            displayDistance.innerText = "CURRENT: ALL MILES FROM " + zipCode;
+        } else {
+            displayDistance.innerText = "CURRENT: " + range + " MILES FROM " + zipCode;
+        }
     } else {
-        alert("Get your shit together, bro.")
         displayDistance.innerText = "";
-
     }
 }
 
@@ -34,8 +35,33 @@ function displayDistance() {
     let displayDistance = document.getElementById("distanceFromZip");
     let valid = /^[0-9]{5}?$/.test(zipCode);
     if (valid) {
-        displayDistance.innerText = "Current: " + range + " miles from " + zipCode;
+        if (range == 30) {
+            displayDistance.innerText = "CURRENT: ALL MILES FROM " + zipCode;
+        } else {
+            displayDistance.innerText = "CURRENT: " + range + " MILES FROM " + zipCode;
+        }
     } else {
     displayDistance.innerText = "";
     }
+}
+
+const form = document.querySelector("form");
+const log = document.querySelector("#log");
+
+form.addEventListener("input", function (event) {
+
+    var data = new FormData(form);
+    var output = "";
+    for (const entry of data) {
+        output = entry[1] + "\r";
+    };
+    event.preventDefault();
+}, false);
+
+
+function displayResults() {
+    let resultAmount = ;
+    let resultAmountText = document.getElementById("resultAmountText");
+
+    resultAmountText.innerText = "Total Results: " + ;
 }

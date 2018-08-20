@@ -19,12 +19,12 @@
     <div class="container">
         <div class="nav">
             <img class="navBar" src="assets/gradient.png" alt="gradient line">
-            <hr>
+            <hr id="navBreak">
         </div>
         <div class="hero">
         </div>
         <div class="zipCodeSearch">
-                <label>Zip Code</label>
+                <label id="zipCodeLabel">Zip Code</label>
                 <div class="zipFlex">
                     <input type="text" pattern="[0-9]{5}?$" id="zipCodeField" title="Five digit zip code" />
                     <input type="button" id="zipCodeSubmit" value="Search" onclick="validateZipCode()">
@@ -32,7 +32,7 @@
         </div>
         <div class="subContainer">
             <div class="filter">
-                <p id="distance">
+                <p class="filterText">
                     Distance
                 </p>
                 <div class="slider">
@@ -45,11 +45,36 @@
                         <li>25</li>
                         <li>All</li>
                     </ul>
-                    <span id="distanceFromZip"></span>
+                    <span id="distanceFromZip">
+                        <br>
+                    </span>
+                    <hr id="filterBreak">
                 </div>
+                <p class="filterText" id="gender">
+                    Gender
+                </p>
+                <form id="genderInput">
+                    <input type="radio" id="genderChoiceOne" name="gender" value="Male">
+                        <label for="genderChoiceOne"> Male</label>
+                        <br>
+                    <input type="radio" id="genderChoiceTwo" name="gender" value="Female">
+                        <label for="genderChoiceTwo">Female</label>
+                        <br>
+                    <input type="radio" id="genderChoiceThree" name="gender" value="No preference">
+                        <label for="genderChoiceThree">No preference</label>
+
+                </form>
+                <pre id="log">
+                </pre>
             </div>
             <div class="results">
+                <p id="resultAmountText">
+                </p>
+                <div class="doctors">
+                </div>
+                <hr>
             </div>
+
         </div>
     </div>
     <script src="js/main.js" async defer></script>

@@ -8,6 +8,7 @@ $colors: (
 	lightBlue: #25aae1,
 	darkGray: #858585,
 	lightGray: #f8f8f8,
+	mediumGray: #f2f7fa,
 	black: #000000,
 	brown: #695e4a,
 	green: #5ab44b,
@@ -24,7 +25,7 @@ $track-color: #ccc;
 @mixin track {
 	box-sizing: border-box;
 	border: none;
-  height: $track-height;
+	height: $track-height;
 	background: $track-color;
 }
 
@@ -64,7 +65,7 @@ body {
 	font-family: 'Cabin', sans-serif;
 }
 
-[type='range'] {
+[type="range"] {
 	margin: 0;
 	padding: 0;
 	height: $thumb-height;
@@ -87,6 +88,11 @@ body {
 	}
 }
 
+form {
+	font-size: 16px;
+	color: map-get($colors, lightBlue);
+}
+
 html,
 body {
 	height: 100%;
@@ -94,14 +100,12 @@ body {
 }
 
 hr {
-	box-shadow: #000000;
-}
-
-label {
+	background-color: map-get($colors, mediumGray);
+	height: 2px;
 	display: block;
-	font-size: 17px;
-	color: map-get($colors, brown);
-	padding-bottom: 0.5em;
+	border: none;
+	width: 100%;
+
 }
 
 
@@ -115,9 +119,17 @@ label {
 
 .filter {
 	padding: 2rem;
-	background-color: map-get($colors, green);
 	min-width: 130px;
 }
+
+.filterText {
+	font-size: 20px;
+	color: map-get($colors, darkBlue);
+	margin-top: 0;
+	padding-bottom: 0.5em;
+	margin-bottom: 0;
+}
+
 
 .hero {
 	order: 2;
@@ -144,9 +156,13 @@ label {
 	order: 1;
 	grid-column:1 / span 7;
 	grid-row: 1 / span 1;
-	object-fit: fill;
 	display: block;
 	justify-self: center;
+}
+
+.navBar {
+	max-width: 100%;
+	object-fit: contain;
 }
 
 .results {
@@ -193,12 +209,17 @@ label {
 }
 
 /* ----- IDs ----- */
-#distance {
-	font-size: 20px;
-	color: map-get($colors, darkBlue);
-	margin-top: 0;
-	padding-bottom: 0.5em;
-	margin-bottom: 0;
+#distanceFromZip {
+	font-size: 12px;
+	color: map-get($colors, black);
+}
+
+#filterBreak {
+	margin-top: 2rem;
+}
+
+#gender {
+	padding-top: 1.5rem;
 }
 
 #heroImage {
@@ -209,8 +230,24 @@ label {
 	margin-bottom: 0;
 }
 
+#navBreak {
+	box-shadow: 0 2px 3px map-get($colors, mediumGray);
+}
+
+#resultAmount {
+	font-size: 22px;
+	color: map-get($colors, darkGray);
+}
+
 #zipCodeField {
 	padding: 1em;
+}
+
+#zipCodeLabel {
+	display: block;
+	font-size: 17px;
+	color: map-get($colors, brown);
+	padding-bottom: 0.5em;
 }
 
 #zipCodeSubmit {
