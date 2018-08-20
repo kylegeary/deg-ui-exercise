@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js">
-<!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
@@ -16,27 +11,30 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="nav">
+    <main class="container">
+        <section class="nav">
+            <div class="logo">
+                <embed src="assets/logo.svg">
+            </div>
             <img class="navBar" src="assets/gradient.png" alt="gradient line">
             <hr id="navBreak">
-        </div>
-        <div class="hero">
-        </div>
-        <div class="zipCodeSearch">
-                <label id="zipCodeLabel">Zip Code</label>
-                <div class="zipFlex">
-                    <input type="text" pattern="[0-9]{5}?$" id="zipCodeField" title="Five digit zip code" />
-                    <input type="button" id="zipCodeSubmit" value="Search" onclick="validateZipCode()">
-                </div>
-        </div>
-        <div class="subContainer">
-            <div class="filter">
+        </section>
+        <section class="hero">
+        </section>
+        <section class="zipCodeSearch">
+            <label id="zipCodeLabel">Zip Code</label>
+            <div class="zipFlex">
+                <input type="text" pattern="[0-9]{5}?$" id="zipCodeField" title="Five digit zip code" />
+                <input type="button" id="zipCodeSubmit" value="Search" onclick="validateZipCode()">
+            </div>
+        </section>
+        <section class="subContainer">
+            <aside class="filter">
                 <p class="filterText">
                     Distance
                 </p>
                 <div class="slider">
-                    <input type="range" min="5" max="30" step="5" value="5" id="mileRange"/>
+                    <input type="range" min="5" max="30" step="5" value="5" id="mileRange" />
                     <ul class="miles">
                         <li>5</li>
                         <li>10</li>
@@ -55,28 +53,26 @@
                 </p>
                 <form id="genderInput">
                     <input type="radio" id="genderChoiceOne" name="gender" value="Male">
-                        <label for="genderChoiceOne"> Male</label>
-                        <br>
+                    <label for="genderChoiceOne"> Male</label>
+                    <br>
                     <input type="radio" id="genderChoiceTwo" name="gender" value="Female">
-                        <label for="genderChoiceTwo">Female</label>
-                        <br>
-                    <input type="radio" id="genderChoiceThree" name="gender" value="No preference">
-                        <label for="genderChoiceThree">No preference</label>
-
+                    <label for="genderChoiceTwo">Female</label>
+                    <br>
+                    <input type="radio" id="genderChoiceThree" name="gender" value="">
+                    <label for="genderChoiceThree">No preference</label>
                 </form>
                 <pre id="log">
                 </pre>
-            </div>
-            <div class="results">
+            </aside>
+            <summary class="results">
                 <p id="resultAmountText">
                 </p>
                 <div id="doctors">
                 </div>
                 <hr>
-            </div>
-
-        </div>
-    </div>
+            </summary>
+        </section>
+    </main>
     <script src="js/main.js" async defer></script>
 </body>
 

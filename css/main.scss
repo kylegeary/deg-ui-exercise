@@ -108,7 +108,10 @@ hr {
 
 }
 
-
+embed {
+	max-height: 150px;
+	max-width: 150px;
+}
 /* ----- CLASSES ----- */
 .container {
 	height: 100%;
@@ -137,6 +140,13 @@ hr {
 	grid-row: 2 / span 1;
 	background: no-repeat center url("../assets/hospital.png");
 	min-width: 350px;
+	margin-top: 1rem;
+	min-height: 300px;
+}
+.logo {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 }
 
 .miles {
@@ -166,7 +176,6 @@ hr {
 }
 
 .results {
-	background-color: map-get($colors, darkBlue);
 	min-width: 150px;
 }
 

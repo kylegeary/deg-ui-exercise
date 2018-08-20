@@ -116,6 +116,11 @@ hr {
   width: 100%;
 }
 
+embed {
+  max-height: 150px;
+  max-width: 150px;
+}
+
 /* ----- CLASSES ----- */
 .container {
   height: 100%;
@@ -152,6 +157,18 @@ hr {
   grid-row: 2 / span 1;
   background: no-repeat center url("../assets/hospital.png");
   min-width: 350px;
+  margin-top: 1rem;
+  min-height: 300px;
+}
+
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .miles {
@@ -193,7 +210,6 @@ hr {
 }
 
 .results {
-  background-color: #006595;
   min-width: 150px;
 }
 

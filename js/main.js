@@ -53,7 +53,6 @@ const log = document.querySelector("#log");
 form.addEventListener("input", function (event) {
 
     var data = new FormData(form);
-    var output = "";
     for (const entry of data) {
         output = entry[1] + "\r";
     };
@@ -70,26 +69,261 @@ function displayResults() {
 }
 */
 
+
 function getDoctors() {
-    fetch("doctors.json")
-        .then((res) => res.json())
-        .then((data) => {
-            let output = "<p>doctors</p>";
-            data.forEach(function(){
-                output +=`
-                <ul>
-                    <li>${results[i].fullName}</li>
-                    <li>${doctor.specialities}</li>
-                    <li>${doctor.locations.name}</li>
-                    <li>${doctor.locations.distance}</li>
-                    <li>${doctor.gender}</li>
-                </ul>
-                `;
-            })
-            document.getElementById('doctors').innerHTML += output;
-        })
-    }
-
-
-
-
+    let json = {
+        "results": [
+            {
+                "fullName": "Nick Andrew Mandela",
+                "lastName": "Mandela",
+                "specialties": [
+                    "Vein Care Again",
+                    "Neurology"
+                ],
+                "url": "#",
+                "image": "../assets/avatar.png",
+                "gender": "Male",
+                "bio": "",
+                "locations": [
+                    {
+                        "name": "St Louis",
+                        "url": "https://www.google.com",
+                        "streetAddress": null,
+                        "cityStateZip": null,
+                        "lat": 0,
+                        "lng": 0,
+                        "distance": 0.8122855139943341,
+                        "phone": null,
+                        "image": null,
+                        "availability": null
+                    },
+                    {
+                        "name": "Olathe",
+                        "url": "https://www.google.com",
+                        "streetAddress": null,
+                        "cityStateZip": null,
+                        "lat": 0,
+                        "lng": 0,
+                        "distance": 23.1210731921023,
+                        "phone": null,
+                        "image": null,
+                        "availability": null
+                    },
+                    {
+                        "name": "Vein Care Center",
+                        "url": "https://www.google.com",
+                        "streetAddress": null,
+                        "cityStateZip": null,
+                        "lat": 0,
+                        "lng": 0,
+                        "distance": 12.59373900731615,
+                        "phone": null,
+                        "image": null,
+                        "availability": null
+                    }
+                ]
+            },
+            {
+                "fullName": "Dr. Ryan Heap",
+                "lastName": "Heap",
+                "specialties": [
+                    "Vein Care Again",
+                    "Neurology"
+                ],
+                "url": "#",
+                "image": "../assets/drheap.jpg",
+                "gender": "Male",
+                "bio": "Dr. Ryan \"Doogie\" Heap is the son of Ronnie (Harrison Ford) and JoJo Heap (Linda Hamilton). As a child, he twice survived early-stage pediatric leukemia after his father—a family physician—discovered suspicious bruising. The experience contributed to the younger Heap's desire to enter medicine.",
+                "locations": [
+                    {
+                        "name": "St Louis",
+                        "url": "https://www.google.com",
+                        "streetAddress": null,
+                        "cityStateZip": null,
+                        "lat": 0,
+                        "lng": 0,
+                        "distance": 5.22855139943341,
+                        "phone": null,
+                        "image": null,
+                        "availability": null
+                    },
+                    {
+                        "name": "Olathe",
+                        "url": "https://www.google.com",
+                        "streetAddress": null,
+                        "cityStateZip": null,
+                        "lat": 0,
+                        "lng": 0,
+                        "distance": 15.1210731921023,
+                        "phone": null,
+                        "image": null,
+                        "availability": null
+                    },
+                    {
+                        "name": "Vein Care Center",
+                        "url": "https://www.google.com",
+                        "streetAddress": null,
+                        "cityStateZip": null,
+                        "lat": 0,
+                        "lng": 0,
+                        "distance": 8.59373900731615,
+                        "phone": null,
+                        "image": null,
+                        "availability": null
+                    }
+                ]
+            },
+            {
+                "fullName": "Dr. Jan Smith",
+                "lastName": "Smith",
+                "specialties": [],
+                "url": "#",
+                "image": "../assets/avatar.png",
+                "gender": "Female",
+                "bio": "",
+                "locations": [
+                    {
+                        "name": "Olathe",
+                        "url": "https://www.google.com",
+                        "streetAddress": null,
+                        "cityStateZip": null,
+                        "lat": 0,
+                        "lng": 0,
+                        "distance": 32.1210731921023,
+                        "phone": null,
+                        "image": null,
+                        "availability": null
+                    }
+                ]
+            },
+            {
+                "fullName": "John A Doe",
+                "lastName": "Doe",
+                "specialties": [],
+                "languages": [
+                    "English"
+                ],
+                "url": "#",
+                "image": "../assets/avatar.png",
+                "gender": null,
+                "bio": "",
+                "locations": [
+                    {
+                        "name": "Olathe",
+                        "url": "https://www.google.com",
+                        "streetAddress": null,
+                        "cityStateZip": null,
+                        "lat": 0,
+                        "lng": 0,
+                        "distance": 12.1210731921023,
+                        "phone": null,
+                        "image": null,
+                        "availability": null
+                    }
+                ]
+            },
+            {
+                "fullName": "John D Test",
+                "lastName": "Test",
+                "specialties": [],
+                "url": "#",
+                "image": null,
+                "gender": null,
+                "bio": "",
+                "locations": [
+                    {
+                        "name": "Olathe",
+                        "url": "https://www.google.com",
+                        "streetAddress": null,
+                        "cityStateZip": null,
+                        "lat": 0,
+                        "lng": 0,
+                        "distance": 3.1210731921023,
+                        "phone": null,
+                        "image": null,
+                        "availability": null
+                    }
+                ]
+            },
+            {
+                "fullName": "Alison T Test",
+                "lastName": "Test",
+                "specialties": [
+                    "Vein Care Again",
+                    "Neurology"
+                ],
+                "url": "#",
+                "image": "../assets/avatar.png",
+                "gender": "Female",
+                "bio": "",
+                "locations": [
+                    {
+                        "name": "Olathe",
+                        "url": "https://www.google.com",
+                        "streetAddress": null,
+                        "cityStateZip": null,
+                        "lat": 0,
+                        "lng": 0,
+                        "distance": 1.1210731921023,
+                        "phone": null,
+                        "image": null,
+                        "availability": null
+                    },
+                    {
+                        "name": "Vein Care Center",
+                        "url": "https://www.google.com",
+                        "streetAddress": null,
+                        "cityStateZip": null,
+                        "lat": 0,
+                        "lng": 0,
+                        "distance": 12.59373900731615,
+                        "phone": null,
+                        "image": null,
+                        "availability": null
+                    }
+                ]
+            },
+            {
+                "fullName": "Test A Test",
+                "lastName": "Test",
+                "specialties": [
+                    "Neurology"
+                ],
+                "url": "#",
+                "image": "../assets/avatar.png",
+                "gender": "Female",
+                "bio": "",
+                "locations": [
+                    {
+                        "name": "Olathe",
+                        "url": "https://www.google.com",
+                        "streetAddress": null,
+                        "cityStateZip": null,
+                        "lat": 0,
+                        "lng": 0,
+                        "distance": 22.1210731921023,
+                        "phone": null,
+                        "image": null,
+                        "availability": null
+                    },
+                    {
+                        "name": "Lenexa",
+                        "url": "https://www.google.com",
+                        "streetAddress": null,
+                        "cityStateZip": null,
+                        "lat": 0,
+                        "lng": 0,
+                        "distance": 16.92244050719052,
+                        "phone": null,
+                        "image": null,
+                        "availability": null
+                    }
+                ]
+            }
+        ]
+    };
+    let range = document.getElementById("mileRange").value;
+    let gender = document.querySelector('input[name = "gender"]:checked').value;
+    let returned = json.results.filter(i => { return i.locations.find(l => l.distance <= range) != undefined; }).filter(i => i.gender == gender);
+    console.log(returned);
+};
