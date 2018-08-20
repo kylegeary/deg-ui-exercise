@@ -324,6 +324,22 @@ function getDoctors() {
     };
     let range = document.getElementById("mileRange").value;
     let gender = document.querySelector('input[name = "gender"]:checked').value;
-    let returned = json.results.filter(i => { return i.locations.find(l => l.distance <= range) != undefined; }).filter(i => i.gender == gender);
+    let returned = json.results;
+    if (range < 30) {
+        returned = returned.filter(i => { return i.locations.find(l => l.distance <= range) != undefined; });
+    }
+    if(gender) {
+        returned = returned.filter(i => i.gender && i.gender == gender);
+    }
+    document.getElementById("resultAmountText").innerText = "Total Results: " + returned.length;
+    let doctorsList = "";
+    returned.forEach(c => {
+        let specialties = "";
+        c.specialties.forEach(s => {
+            specialties += "<li>" + s + "</li>";
+        })
+        doctorsList += "<li>" + c.fullName + ", " + "<ul>" + specialties + "</ul> ," + "</li>"
+    });
+    document.getElementById("doctors").innerHTML = doctorsList;
     console.log(returned);
 };
