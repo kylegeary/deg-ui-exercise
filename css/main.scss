@@ -1,5 +1,8 @@
+/* ----- FONTS ----- */
 @import url('https://fonts.googleapis.com/css?family=Cabin');
 
+
+/* ----- VARIABLES ----- */
 $colors: (
 	darkBlue: #006595,
 	lightBlue: #25aae1,
@@ -10,66 +13,43 @@ $colors: (
 	green: #5ab44b,
 	white: #ffffff
 );
-$track-width: 12.5em;
-$track-height: .25em;
-$thumb-height: 1.5em;
-$thumb-width: 0.5em;
+
+$track-height: .5em;
+$thumb-height: 1.75em;
+$thumb-width: 0.75em;
 $track-color: #ccc;
 
+
+/* ----- MIXINS ----- */
 @mixin track {
 	box-sizing: border-box;
 	border: none;
-	width: $track-width; height: $track-height;
+  height: $track-height;
 	background: $track-color;
 }
 
-@mixin thumb() {
+@mixin thumb {
 	box-sizing: border-box;
 	border: none;
 	width: $thumb-width; height: $thumb-height;
 	background: #25aae1;
 }
 
-div.filter {
-	[type='range'] {
-	&,
-	&::-webkit-slider-thumb {
-		-webkit-appearance: none;
-	}
-	margin: 0;
-	padding: 0;
-	width: $track-width; height: $thumb-height;
-	background: transparent;
-	font: 1em/1 arial, sans-serif;
 
-	&::-webkit-slider-runnable-track { @include track }
-	&::-moz-range-track { @include track }
-	&::-moz-focus-outer {
-    border: 0;
-    }
-	&::-ms-track { @include track }
-
-	&::-webkit-slider-thumb {
-		margin-top: .5*($track-height - $thumb-height);
-		@include thumb
+/* ----- MEDIA QUERIES ----- */
+@media screen and (min-width: 1400px) {
+	.container {
+		max-width: 1400px;
+		margin-left: auto;
+		margin-right: auto;
 	}
-	&::-moz-range-thumb { @include thumb }
-	&::-ms-thumb {
-		margin-top: 0;
-		@include thumb
-	}
-
-	&::-ms-tooltip { display: none }
-}
-}
+};
 
 /*
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 995px) {
     margin-left:auto;
     margin-right:auto;
 };
-
-
 @media screen and (min-width: 501px) {
     body {
     margin-left:auto;
@@ -78,13 +58,34 @@ div.filter {
 };
 */
 
-@media screen and (min-width: 1200px) {
-	.container {
-		max-width: 1200px;
-		margin-left: auto;
-		margin-right: auto;
+
+/* ----- ELEMENTS ----- */
+body {
+	font-family: 'Cabin', sans-serif;
+}
+
+[type='range'] {
+	margin: 0;
+	padding: 0;
+	height: $thumb-height;
+	background: transparent;
+	width: 100%;
+	&::-webkit-slider-thumb {-webkit-appearance: none;}
+	&::-webkit-slider-runnable-track {@include track;}
+	&::-moz-range-track {@include track;}
+	&::-moz-focus-outer {border: 0;}
+	&::-ms-track {@include track;}
+	&::-moz-range-thumb { @include thumb;}
+	&::-ms-tooltip {display: none;}
+	&::-ms-thumb {
+		margin-top: 0;
+		@include thumb;
 	}
-};
+	&::-webkit-slider-thumb {
+		margin-top: .5*($track-height - $thumb-height);
+		@include thumb;
+	}
+}
 
 html,
 body {
@@ -92,30 +93,51 @@ body {
 	margin:0;
 }
 
-body {
-	font-family: "Cabin", arial, sans-serif;
-};
-
 hr {
 	box-shadow: #000000;
 }
 
+label {
+	display: block;
+	font-size: 17px;
+	color: map-get($colors, brown);
+	padding-bottom: 0.5em;
+}
+
+
+/* ----- CLASSES ----- */
 .container {
 	height: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr 3fr 1fr 2fr;
-	grid-gap: 1rem;
 }
 
-.subContainer {
-	order: 4;
-	display: grid;
-	grid-template-columns: 1fr 2fr;
-	grid-template-rows: 1fr;
+.filter {
+	padding: 2rem;
+	background-color: map-get($colors, green);
+	min-width: 130px;
+}
+
+.hero {
+	order: 2;
 	grid-column:2 / span 4;
-	grid-row: 4 / span 1;
-	padding-bottom: 2em;
+	grid-row: 2 / span 1;
+	background: no-repeat center url("../assets/hospital.png");
+	min-width: 230px;
+}
+
+.miles {
+	padding-top: 0;
+	margin-top: 0;
+	color: #000;
+	display: flex;
+	justify-content: space-between;
+	width: 100.5%;
+	padding-left: 0;
+	list-style-type: none;
+	font-size: 12px;
+	color: map-get($colors, darkGray)
 }
 
 .nav {
@@ -127,13 +149,31 @@ hr {
 	justify-self: center;
 }
 
+.results {
+	background-color: map-get($colors, darkBlue);
+}
+
+.slider {
+  width: 100%;
+}
+
+.subContainer {
+	order: 4;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 1fr;
+	grid-column:2 / span 4;
+	grid-row: 4 / span 1;
+	padding-bottom: 2em;
+	min-width: 230px;
+}
+
 .zipCodeSearch {
 	order: 3;
 	background-color: map-get($colors, lightGray);
-	object-fit: contain;
 	grid-column:2 / span 4;
 	grid-row: 3 / span 1;
-	padding: 1rem;
+	padding: 1rem 1rem 2rem 1rem;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	[type="text"] {
@@ -142,37 +182,24 @@ hr {
 	[type="button"] {
 		width: 20%;
 	}
+	min-width: 198px;
 }
 
-.hero {
+.zipFlex {
 	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	min-height: 0;
-}
-.filter {
-	padding: 2rem;
-	background-color: map-get($colors, green);
+	justify-content: space-between;
+	flex-wrap: nowrap;
+
 }
 
-.results {
-	background-color: map-get($colors, darkBlue);
+/* ----- IDs ----- */
+#distance {
+	font-size: 20px;
+	color: map-get($colors, darkBlue);
+	margin-top: 0;
+	padding-bottom: 0.5em;
+	margin-bottom: 0;
 }
-
-.hero {
-	order: 2;
-	grid-column:2 / span 4;
-	grid-row: 2 / span 1;
-}
-
-.slider {
-	width: 100%;
-	height: 25px;
-    outline: none;
-}
-
-
 
 #heroImage {
 	max-width: 100%;
@@ -181,20 +208,17 @@ hr {
 	margin-top: 0;
 	margin-bottom: 0;
 }
-#zipCodeSubmit {
-	background-color: map-get($colors,green);
-	border: none;
-	color: map-get($colors, white);
-	padding: 1em;
-	border-radius: 5px;
-	margin-inline-start: 30%;
-
-}
 
 #zipCodeField {
 	padding: 1em;
 }
 
-label {
-	display: block;
+#zipCodeSubmit {
+	background-color: map-get($colors,green);
+	border: none;
+	color: map-get($colors, white);
+	padding: 0.75rem;
+	border-radius: 5px;
+	font-size: 18px;
+	min-width: 85px;
 }

@@ -22,16 +22,30 @@
             <hr>
         </div>
         <div class="hero">
-            <img src="assets/hospital.png" alt="hospital" id="heroImage">
         </div>
         <div class="zipCodeSearch">
-            <label>Zip Code</label>
-            <input type="text" pattern="[0-9]{5}?$" id="zipCodeField" title="Five digit zip code" />
-            <input type="button" id="zipCodeSubmit" value="Search" onclick="validateZipCode()">
+                <label>Zip Code</label>
+                <div class="zipFlex">
+                    <input type="text" pattern="[0-9]{5}?$" id="zipCodeField" title="Five digit zip code" />
+                    <input type="button" id="zipCodeSubmit" value="Search" onclick="validateZipCode()">
+                </div>
         </div>
         <div class="subContainer">
             <div class="filter">
-                <input type="range" min="5" max="30" value="20" step="5"/>
+                <p id="distance">
+                    Distance
+                </p>
+                <div class="slider">
+                    <input type="range" min="5" max="30" value="20" step="5" />
+                    <ul class="miles">
+                        <li>5</li>
+                        <li>10</li>
+                        <li>15</li>
+                        <li>20</li>
+                        <li>25</li>
+                        <li>All</li>
+                    </ul>
+                </div>
             </div>
             <div class="results">
             </div>
