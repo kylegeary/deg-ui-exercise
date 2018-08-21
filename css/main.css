@@ -1,5 +1,5 @@
 /* ----- FONTS ----- */
-@import url("https://fonts.googleapis.com/css?family=Cabin");
+@import url("https://fonts.googleapis.com/css?family=Cabin:regular,bold");
 /* ----- VARIABLES ----- */
 /* ----- MIXINS ----- */
 /* ----- MEDIA QUERIES ----- */
@@ -237,6 +237,7 @@ ul {
 }
 
 .subContainer {
+  visibility: hidden;
   -webkit-box-ordinal-group: 5;
       -ms-flex-order: 4;
           order: 4;

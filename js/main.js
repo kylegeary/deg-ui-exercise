@@ -1,3 +1,4 @@
+
 const zipCodeInput = document.getElementById("zipCodeField");
 zipCodeInput.addEventListener('keydown', function (event) {
     if (event.code == "Enter") {
@@ -19,25 +20,24 @@ function validateZipCode() {
     let range = document.getElementById("mileRange").value;
     let valid = /^[0-9]{5}?$/.test(zipCode);
     let resultAmountText = document.getElementById("resultAmountText");
-    let doctors = document.querySelector(".results");
-    let filter = document.querySelector(".filter");
+    let results = document.querySelector(".results");
     if (valid && range == 30) {
         displayDistance.innerText = "CURRENT: ALL MILES FROM " + zipCode;
+        document.querySelector('.subContainer').style.visibility = "visible";
+        results.style.display = "block";
         resultAmountText.style.display = "block";
-        doctors.style.display = "inline-block";
-        filter.style.display = "inline-block";
 
-        
+
     } else if (valid && range < 30) {
         displayDistance.innerText = "CURRENT: " + range + " MILES FROM " + zipCode;
+        document.querySelector('.subContainer').style.visibility = "visible";
+        results.style.display = "block";
         resultAmountText.style.display = "block";
-        doctors.style.display = "inline-block";
-        filter.style.display = "inline-block";
+
     } else {
         displayDistance.innerText = "";
-        doctors.style.display = "none";
+        results.style.display = "none";
         resultAmountText.style.display = "none";
-        filter.style.display = "none";
     }
     getDoctors();
 }
@@ -71,15 +71,6 @@ form.addEventListener("input", function (event) {
     event.preventDefault();
     getDoctors();
 }, false);
-
-/*
-function displayResults() {
-    let resultAmount = ;
-    let resultAmountText = document.getElementById("resultAmountText");
-
-    resultAmountText.innerText = "Total Results: " + ;
-}
-*/
 
 
 function getDoctors() {
