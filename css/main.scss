@@ -39,38 +39,48 @@ $track-color: #ccc;
 
 
 /* ----- MEDIA QUERIES ----- */
-@media screen and (max-width: 857px) {
-	.doctorImage {
-		display: block;
-	}
-	.hero {
-		min-width: 100px;
-	}
+@media only screen and (max-width: 857px) {
 	.subContainer {
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 1fr;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr;
+		& aside.filter {
+			align-content: center;
+			order: 1;
+			display: block;
+			grid-column: 1/span 2;
+			margin: 0;
+			padding-left: 0;
+			padding-right: 0;
+			padding-bottom: 1rem;
+			& p {
+				padding-top: 1rem;
+			}
+		}
+		& .results {
+		order: 2;
+		display: block;
+		max-width: 100%;
+		grid-column: 1/span 2;
+		grid-row: 2;
 		margin: 0;
 		padding: 0;
+		& .doctorCard {
+			& li {
+				font-size: 16px;
+			}
+			& ul {
+				font-size: 14px;
+			}
+		}
 	}
-	.filter {
-		order: 1;
-		display: block;
-		grid-column: 1/span 1;
-		padding-left: 1rem;
-		width: 140%;
 	}
 
 	.locators {
 		order:4;
 		display: block;
 	}
-	.results {
-		order: 2;
-		display: block;
-		min-width: 100%;
-		grid-column: 1/span 1;
-		grid-row: 2/span 1;
-	}
+
 	.profileInfo {
 		order: 3;
 }
@@ -86,6 +96,11 @@ $track-color: #ccc;
 
 
 /* ----- ELEMENTS ----- */
+* {
+  padding: 0;
+  margin: 0;
+}
+
 a:link, a:visited, a:hover, a:active {
   text-decoration: none; color: map-get($colors, lightBlue);
 }
@@ -195,6 +210,9 @@ ul {
 .filter {
 	padding: 2rem;
 	min-width: 136px;
+	& p {
+		padding-top: 1rem;
+	}
 }
 
 .filterText {
@@ -288,16 +306,19 @@ ul {
 	padding-bottom: 0;
 }
 
-.subContainer {
+.subContainerWrapper {
 	visibility: hidden;
 	order: 4;
-	display: grid;
-	grid-template-columns: 1fr 2fr;
-	grid-template-rows: 1fr;
 	grid-column:2 / span 4;
 	grid-row: 4 / span 1;
 	padding-bottom: 2em;
-	min-width: 230px;
+
+}
+
+.subContainer {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 1fr;
 }
 
 .zipCodeSearch {
