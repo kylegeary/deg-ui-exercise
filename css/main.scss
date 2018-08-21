@@ -1,5 +1,5 @@
 /* ----- FONTS ----- */
-@import url('https://fonts.googleapis.com/css?family=Cabin');
+@import url('https://fonts.googleapis.com/css?family=Cabin:regular,bold');
 
 
 /* ----- VARIABLES ----- */
@@ -88,6 +88,11 @@ body {
 	}
 }
 
+embed {
+	max-height: 150px;
+	max-width: 150px;
+}
+
 form {
 	font-size: 16px;
 	color: map-get($colors, lightBlue);
@@ -106,10 +111,9 @@ hr {
 	border: none;
 	width: 100%;
 }
-
-embed {
-	max-height: 150px;
-	max-width: 150px;
+ul {
+	list-style-type:none;
+	padding-left: 0;
 }
 /* ----- CLASSES ----- */
 .container {
@@ -122,6 +126,7 @@ embed {
 .filter {
 	padding: 2rem;
 	min-width: 136px;
+	display: none;
 }
 
 .filterText {
@@ -132,6 +137,18 @@ embed {
 	margin-bottom: 0;
 }
 
+.fullName {
+	font-size: 20px;
+	color: map-get($colors, lightBlue);
+	list-style-type:none;
+	list-style-position:inside;
+	& li {
+		font-size:20;
+		color: map-get($colors, black);
+		list-style-type:none;
+		list-style-position:inside;
+	}
+}
 
 .hero {
 	order: 2;
@@ -191,6 +208,7 @@ embed {
 	grid-row: 4 / span 1;
 	padding-bottom: 2em;
 	min-width: 230px;
+	display: none;
 }
 
 .zipCodeSearch {
@@ -245,6 +263,11 @@ embed {
 }
 
 #resultAmount {
+	font-size: 22px;
+	color: map-get($colors, darkGray);
+}
+
+#resultAmountText {
 	font-size: 22px;
 	color: map-get($colors, darkGray);
 }

@@ -97,6 +97,11 @@ body {
   background: #25aae1;
 }
 
+embed {
+  max-height: 150px;
+  max-width: 150px;
+}
+
 form {
   font-size: 16px;
   color: #25aae1;
@@ -116,9 +121,9 @@ hr {
   width: 100%;
 }
 
-embed {
-  max-height: 150px;
-  max-width: 150px;
+ul {
+  list-style-type: none;
+  padding-left: 0;
 }
 
 /* ----- CLASSES ----- */
@@ -143,6 +148,20 @@ embed {
   margin-top: 0;
   padding-bottom: 0.5em;
   margin-bottom: 0;
+}
+
+.fullName {
+  font-size: 20px;
+  color: #25aae1;
+  list-style-type: none;
+  list-style-position: inside;
+}
+
+.fullName li {
+  font-size: 20;
+  color: #000000;
+  list-style-type: none;
+  list-style-position: inside;
 }
 
 .hero {
@@ -302,6 +321,11 @@ embed {
 }
 
 #resultAmount {
+  font-size: 22px;
+  color: #858585;
+}
+
+#resultAmountText {
   font-size: 22px;
   color: #858585;
 }

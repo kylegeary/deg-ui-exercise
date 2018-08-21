@@ -1,4 +1,3 @@
-
 const zipCodeInput = document.getElementById("zipCodeField");
 zipCodeInput.addEventListener('keydown', function (event) {
     if (event.code == "Enter") {
@@ -9,7 +8,8 @@ zipCodeInput.addEventListener('keydown', function (event) {
 const range = document.getElementById("mileRange");
 range.addEventListener("input", function (event) {
     event.preventDefault;
-    displayDistance();
+    displayDistance()
+    ;
 })
 
 
@@ -18,14 +18,26 @@ function validateZipCode() {
     let displayDistance = document.getElementById("distanceFromZip");
     let range = document.getElementById("mileRange").value;
     let valid = /^[0-9]{5}?$/.test(zipCode);
-    if (valid){
-        if (range == 30) {
-            displayDistance.innerText = "CURRENT: ALL MILES FROM " + zipCode;
-        } else {
-            displayDistance.innerText = "CURRENT: " + range + " MILES FROM " + zipCode;
-        }
+    let resultAmountText = document.getElementById("resultAmountText");
+    let doctors = document.querySelector(".results");
+    let filter = document.querySelector(".filter");
+    if (valid && range == 30) {
+        displayDistance.innerText = "CURRENT: ALL MILES FROM " + zipCode;
+        resultAmountText.style.display = "block";
+        doctors.style.display = "inline-block";
+        filter.style.display = "inline-block";
+
+        
+    } else if (valid && range < 30) {
+        displayDistance.innerText = "CURRENT: " + range + " MILES FROM " + zipCode;
+        resultAmountText.style.display = "block";
+        doctors.style.display = "inline-block";
+        filter.style.display = "inline-block";
     } else {
         displayDistance.innerText = "";
+        doctors.style.display = "none";
+        resultAmountText.style.display = "none";
+        filter.style.display = "none";
     }
     getDoctors();
 }
@@ -42,7 +54,7 @@ function displayDistance() {
             displayDistance.innerText = "CURRENT: " + range + " MILES FROM " + zipCode;
         }
     } else {
-    displayDistance.innerText = "";
+        displayDistance.innerText = "";
     }
     getDoctors();
 }
@@ -328,7 +340,7 @@ function getDoctors() {
     if (range < 30) {
         returned = returned.filter(i => { return i.locations.find(l => l.distance <= range) != undefined; });
     }
-    if(gender) {
+    if (gender) {
         returned = returned.filter(i => i.gender && i.gender == gender);
     }
     document.getElementById("resultAmountText").innerText = "Total Results: " + returned.length;
@@ -338,7 +350,7 @@ function getDoctors() {
         c.specialties.forEach(s => {
             specialties += "<li>" + s + "</li>";
         })
-        doctorsList += "<li>" + c.fullName + ", " + "<ul>" + specialties + "</ul> ," + "</li>"
+        doctorsList += "<li class=\"fullName\">" + c.fullName + "<ul>" + specialties + "</ul>" + "</li> <br>"
     });
     document.getElementById("doctors").innerHTML = doctorsList;
     console.log(returned);
