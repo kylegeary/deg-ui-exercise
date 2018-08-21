@@ -3,7 +3,7 @@
 /* ----- VARIABLES ----- */
 /* ----- MIXINS ----- */
 /* ----- MEDIA QUERIES ----- */
-@media only screen and (max-width: 857px) {
+@media screen and (max-width: 857px) {
   .subContainer {
     display: -ms-grid;
     display: grid;
@@ -63,9 +63,9 @@
   }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1158px) {
   .container {
-    max-width: 1400px;
+    max-width: 1158px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -298,8 +298,10 @@ ul {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .miles {
@@ -335,9 +337,10 @@ ul {
 }
 
 .navBar {
-  max-width: 100%;
+  max-height: 9px;
   -o-object-fit: contain;
      object-fit: contain;
+  max-width: 100%;
 }
 
 .profileInfo {
