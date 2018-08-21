@@ -53,6 +53,9 @@ $track-color: #ccc;
 			padding-left: 0;
 			padding-right: 0;
 			padding-bottom: 1rem;
+			& p {
+				padding-top: 1rem;
+			}
 		}
 		& .results {
 		order: 2;
@@ -207,6 +210,9 @@ ul {
 .filter {
 	padding: 2rem;
 	min-width: 136px;
+	& p {
+		padding-top: 1rem;
+	}
 }
 
 .filterText {

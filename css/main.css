@@ -27,6 +27,9 @@
     padding-right: 0;
     padding-bottom: 1rem;
   }
+  .subContainer aside.filter p {
+    padding-top: 1rem;
+  }
   .subContainer .results {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -240,6 +243,10 @@ ul {
 .filter {
   padding: 2rem;
   min-width: 136px;
+}
+
+.filter p {
+  padding-top: 1rem;
 }
 
 .filterText {
