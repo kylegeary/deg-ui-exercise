@@ -11,19 +11,64 @@
   }
 }
 
-/*
-@media screen and (max-width: 995px) {
-    margin-left:auto;
-    margin-right:auto;
-};
-@media screen and (min-width: 501px) {
-    body {
-    margin-left:auto;
-    margin-right:auto;
-    }
-};
-*/
+@media screen and (max-width: 857px) {
+  .doctorImage {
+    display: block;
+  }
+  .hero {
+    min-width: 100px;
+  }
+  .subContainer {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    margin: 0;
+    padding: 0;
+  }
+  .filter {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    display: block;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/span 1;
+    padding-left: 1rem;
+    width: 140%;
+  }
+  .locators {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+    display: block;
+  }
+  .results {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    display: block;
+    min-width: 100%;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/span 1;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/span 1;
+  }
+  .profileInfo {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+}
+
 /* ----- ELEMENTS ----- */
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: #25aae1;
+}
+
 body {
   font-family: 'Cabin', sans-serif;
 }
@@ -121,20 +166,65 @@ hr {
   width: 100%;
 }
 
+li {
+  display: inline-block;
+  margin: 0;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0;
+  display: inline-block;
 }
 
 /* ----- CLASSES ----- */
 .container {
   height: 100%;
+  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   -ms-grid-rows: 1fr 3fr 1fr 2fr;
       grid-template-rows: 1fr 3fr 1fr 2fr;
+}
+
+.distanceToLocation {
+  font-size: 12px;
+  color: #000000;
+}
+
+.doctorCard {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.doctorImage {
+  max-width: 100px;
+  padding-right: 1rem;
+}
+
+.doctorImages {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/ span 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 /span 1;
+}
+
+.doctorList {
+  width: 100%;
+}
+
+.doctors {
+  padding-bottom: 1rem;
 }
 
 .filter {
@@ -151,17 +241,12 @@ ul {
 }
 
 .fullName {
+  padding-left: 1rem;
   font-size: 20px;
   color: #25aae1;
   list-style-type: none;
-  list-style-position: inside;
-}
-
-.fullName li {
-  font-size: 20;
-  color: #000000;
-  list-style-type: none;
-  list-style-position: inside;
+  display: inline-block;
+  padding-right: 1rem;
 }
 
 .hero {
@@ -175,9 +260,19 @@ ul {
   -ms-grid-row-span: 1;
   grid-row: 2 / span 1;
   background: no-repeat center url("../assets/hospital.png");
-  min-width: 350px;
   margin-top: 1rem;
   min-height: 300px;
+  min-width: 233px;
+}
+
+.locators {
+  font-size: 16px;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/ span 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 /span 1;
 }
 
 .logo {
@@ -228,12 +323,38 @@ ul {
      object-fit: contain;
 }
 
+.profileInfo {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / span 1;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
 .results {
-  min-width: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-left: 3rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .slider {
   width: 100%;
+}
+
+.specialties {
+  font-size: 20px;
+  display: block;
+  padding-left: 1rem;
+  padding-bottom: 0;
 }
 
 .subContainer {
@@ -271,7 +392,7 @@ ul {
   padding: 1rem 1rem 2rem 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  min-width: 318px;
+  min-width: 200px;
 }
 
 .zipCodeSearch [type="text"] {

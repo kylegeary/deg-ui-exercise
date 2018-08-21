@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <!--Main grid container-->
     <main class="container">
         <section class="nav">
             <div class="logo">
@@ -28,11 +29,13 @@
                 <input type="button" id="zipCodeSubmit" value="Search" onclick="validateZipCode()">
             </div>
         </section>
+        <!--Grid Subcontainer (for filter & results)-->
         <section class="subContainer">
             <aside class="filter">
                 <p class="filterText">
                     Distance
                 </p>
+                <!--Range input for location logic (note: max=30). I pulled in distances over 30 and displayed 'x -  miles from zip code' by using an if/else which just displayed a string rather than a number for this value -->
                 <div class="slider">
                     <input type="range" min="5" max="30" step="5" value="5" id="mileRange" />
                     <ul class="miles">
@@ -51,6 +54,7 @@
                 <p class="filterText" id="gender">
                     Gender
                 </p>
+                <!-- Radio buttons for gender preference-->
                 <form id="genderInput">
                     <input type="radio" id="genderChoiceOne" name="gender" value="Male" >
                     <label for="genderChoiceOne"> Male</label>
@@ -58,7 +62,7 @@
                     <input type="radio" id="genderChoiceTwo" name="gender" value="Female">
                     <label for="genderChoiceTwo">Female</label>
                     <br>
-                    <input type="radio" id="genderChoiceThree" name="gender" value="">
+                    <input type="radio" id="genderChoiceThree" name="gender" value="" checked>
                     <label for="genderChoiceThree">No preference</label>
                 </form>
                 <pre id="log">
@@ -69,7 +73,6 @@
                 </p>
                 <ul id="doctors">
                 </ul>
-                <hr>
             </summary>
         </section>
     </main>

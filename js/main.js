@@ -1,4 +1,4 @@
-
+/*Checks for 'enter' keydown after typing in zip. The search button also accepts a onClick event (see in HTML). If the event is triggered, then it calls a function to validate the zip code*/
 const zipCodeInput = document.getElementById("zipCodeField");
 zipCodeInput.addEventListener('keydown', function (event) {
     if (event.code == "Enter") {
@@ -6,14 +6,15 @@ zipCodeInput.addEventListener('keydown', function (event) {
     }
 });
 
+
 const range = document.getElementById("mileRange");
 range.addEventListener("input", function (event) {
     event.preventDefault;
     displayDistance()
-    ;
+        ;
 })
 
-
+/*validates zip code with regex and displays 'x miles from zip'. If the zip is not valid, then it hides some of the divs.*/
 function validateZipCode() {
     let zipCode = document.getElementById("zipCodeField").value;
     let displayDistance = document.getElementById("distanceFromZip");
@@ -59,6 +60,7 @@ function displayDistance() {
     getDoctors();
 }
 
+/*Gets gender preference*/
 const form = document.querySelector("form");
 const log = document.querySelector("#log");
 
@@ -72,7 +74,7 @@ form.addEventListener("input", function (event) {
     getDoctors();
 }, false);
 
-
+/*Filters JSON, adds content to HTML based on filters*/
 function getDoctors() {
     let json = {
         "results": [
@@ -336,12 +338,17 @@ function getDoctors() {
     }
     document.getElementById("resultAmountText").innerText = "Total Results: " + returned.length;
     let doctorsList = "";
+
     returned.forEach(c => {
         let specialties = "";
         c.specialties.forEach(s => {
-            specialties += "<li>" + s + "</li>";
+            specialties += "<li class=\"specialties\">" + s + "</li>";
         })
-        doctorsList += "<li class=\"fullName\">" + c.fullName + "<ul>" + specialties + "</ul>" + "</li> <br>"
+        let locations ="";
+        c.locations.forEach(l => {
+            locations +="<a href=\"" + l.url + "\">" + l.name + "</a><br>" + l.distance.toFixed(0) + " miles <br>";
+        })
+        doctorsList += "<div class=\"doctorCard\"><ul class=\"doctorImages\"><li><img class=\"doctorImage\" src=\"" + c.image + "\"></li></ul><ul class=\"profileInfo\"><li class=\"fullName\">" + c.fullName + "<li><br>" + specialties + "</ul><br><ul class=\"locators\">" + locations + "</ul><br></div><hr>"
     });
     document.getElementById("doctors").innerHTML = doctorsList;
     console.log(returned);
