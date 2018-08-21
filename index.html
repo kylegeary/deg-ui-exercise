@@ -14,10 +14,10 @@
     <!--Main grid container-->
     <main class="container">
         <section class="nav">
+            <img class="navBar" src="assets/gradient.png" alt="gradient line">
             <div class="logo">
                 <embed src="assets/logo.svg">
             </div>
-            <img class="navBar" src="assets/gradient.png" alt="gradient line">
             <hr id="navBreak">
         </section>
         <section class="hero">
@@ -32,49 +32,49 @@
         <!--Grid Subcontainer (for filter & results)-->
         <section class="subContainerWrapper">
             <div class="subContainer">
-            <aside class="filter">
-                <p class="filterText">
-                    Distance
-                </p>
-                <!--Range input for location logic (note: max=30). I pulled in distances over 30 and displayed 'x -  miles from zip code' by using an if/else which just displayed a string rather than a number for this value -->
-                <div class="slider">
-                    <input type="range" min="5" max="30" step="5" value="5" id="mileRange" />
-                    <ul class="miles">
-                        <li>5</li>
-                        <li>10</li>
-                        <li>15</li>
-                        <li>20</li>
-                        <li>25</li>
-                        <li>All</li>
-                    </ul>
-                    <p id="distanceFromZip">
-                        <br>
+                <aside class="filter">
+                    <p class="filterText">
+                        Distance
                     </p>
-                    <hr id="filterBreak">
-                </div>
-                <p class="filterText" id="gender">
-                    Gender
-                </p>
-                <!-- Radio buttons for gender preference-->
-                <form id="genderInput">
-                    <input type="radio" id="genderChoiceOne" name="gender" value="Male" >
-                    <label for="genderChoiceOne"> Male</label>
-                    <br>
-                    <input type="radio" id="genderChoiceTwo" name="gender" value="Female">
-                    <label for="genderChoiceTwo">Female</label>
-                    <br>
-                    <input type="radio" id="genderChoiceThree" name="gender" value="" checked>
-                    <label for="genderChoiceThree">No preference</label>
-                </form>
-                <pre id="log">
+                    <!--Range input for location logic (note: max=30). I pulled in distances over 30 and displayed 'x -  miles from zip code' by using an if/else which just displayed a string rather than a number for this value -->
+                    <div class="slider">
+                        <input type="range" min="5" max="30" step="5" value="5" id="mileRange" />
+                        <ul class="miles">
+                            <li>5</li>
+                            <li>10</li>
+                            <li>15</li>
+                            <li>20</li>
+                            <li>25</li>
+                            <li>All</li>
+                        </ul>
+                        <p id="distanceFromZip">
+                            <br>
+                        </p>
+                        <hr id="filterBreak">
+                    </div>
+                    <p class="filterText" id="gender">
+                        Gender
+                    </p>
+                    <!-- Radio buttons for gender preference-->
+                    <form id="genderInput">
+                        <input type="radio" id="genderChoiceOne" name="gender" value="Male">
+                        <label for="genderChoiceOne"> Male</label>
+                        <br>
+                        <input type="radio" id="genderChoiceTwo" name="gender" value="Female">
+                        <label for="genderChoiceTwo">Female</label>
+                        <br>
+                        <input type="radio" id="genderChoiceThree" name="gender" value="" checked>
+                        <label for="genderChoiceThree">No preference</label>
+                    </form>
+                    <pre id="log">
                 </pre>
-            </aside>
-            <summary class="results">
-                <p id="resultAmountText">
-                </p>
-                <ul id="doctors">
-                </ul>
-            </summary>
+                </aside>
+                <summary class="results">
+                    <p id="resultAmountText">
+                    </p>
+                    <ul id="doctors">
+                    </ul>
+                </summary>
             </div>
         </section>
     </main>
