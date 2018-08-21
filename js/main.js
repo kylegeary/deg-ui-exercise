@@ -86,7 +86,7 @@ function getDoctors() {
                     "Neurology"
                 ],
                 "url": "#",
-                "image": "/assets/avatar.png",
+                "image": "assets/avatar.png",
                 "gender": "Male",
                 "bio": "",
                 "locations": [
@@ -136,7 +136,7 @@ function getDoctors() {
                     "Neurology"
                 ],
                 "url": "#",
-                "image": "/assets/drheap.jpg",
+                "image": "assets/drheap.jpg",
                 "gender": "Male",
                 "bio": "Dr. Ryan \"Doogie\" Heap is the son of Ronnie (Harrison Ford) and JoJo Heap (Linda Hamilton). As a child, he twice survived early-stage pediatric leukemia after his father—a family physician—discovered suspicious bruising. The experience contributed to the younger Heap's desire to enter medicine.",
                 "locations": [
@@ -183,7 +183,7 @@ function getDoctors() {
                 "lastName": "Smith",
                 "specialties": [],
                 "url": "#",
-                "image": "/assets/avatar.png",
+                "image": "assets/avatar.png",
                 "gender": "Female",
                 "bio": "",
                 "locations": [
@@ -209,7 +209,7 @@ function getDoctors() {
                     "English"
                 ],
                 "url": "#",
-                "image": "/assets/avatar.png",
+                "image": "assets/avatar.png",
                 "gender": null,
                 "bio": "",
                 "locations": [
@@ -232,7 +232,7 @@ function getDoctors() {
                 "lastName": "Test",
                 "specialties": [],
                 "url": "#",
-                "image": "/assets/avatar.png",
+                "image": "assets/avatar.png",
                 "gender": null,
                 "bio": "",
                 "locations": [
@@ -258,7 +258,7 @@ function getDoctors() {
                     "Neurology"
                 ],
                 "url": "#",
-                "image": "/assets/avatar.png",
+                "image": "assets/avatar.png",
                 "gender": "Female",
                 "bio": "",
                 "locations": [
@@ -295,7 +295,7 @@ function getDoctors() {
                     "Neurology"
                 ],
                 "url": "#",
-                "image": "/assets/avatar.png",
+                "image": "assets/avatar.png",
                 "gender": "Female",
                 "bio": "",
                 "locations": [
@@ -308,7 +308,7 @@ function getDoctors() {
                         "lng": 0,
                         "distance": 22.1210731921023,
                         "phone": null,
-                        "image": "/assets/avatar.png",
+                        "image": "assets/avatar.png",
                         "availability": null
                     },
                     {
