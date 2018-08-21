@@ -3,14 +3,6 @@
 /* ----- VARIABLES ----- */
 /* ----- MIXINS ----- */
 /* ----- MEDIA QUERIES ----- */
-@media screen and (min-width: 1400px) {
-  .container {
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 @media screen and (max-width: 857px) {
   .doctorImage {
     display: block;
@@ -63,6 +55,14 @@
   }
 }
 
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /* ----- ELEMENTS ----- */
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
@@ -71,6 +71,35 @@ a:link, a:visited, a:hover, a:active {
 
 body {
   font-family: 'Cabin', sans-serif;
+}
+
+embed {
+  max-height: 150px;
+  max-width: 150px;
+}
+
+form {
+  font-size: 16px;
+  color: #25aae1;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+hr {
+  background-color: #f2f7fa;
+  height: 2px;
+  display: block;
+  border: none;
+  width: 100%;
+}
+
+li {
+  display: inline-block;
+  margin: 0;
 }
 
 [type="range"] {
@@ -140,35 +169,6 @@ body {
   width: 0.75em;
   height: 1.75em;
   background: #25aae1;
-}
-
-embed {
-  max-height: 150px;
-  max-width: 150px;
-}
-
-form {
-  font-size: 16px;
-  color: #25aae1;
-}
-
-html,
-body {
-  height: 100%;
-  margin: 0;
-}
-
-hr {
-  background-color: #f2f7fa;
-  height: 2px;
-  display: block;
-  border: none;
-  width: 100%;
-}
-
-li {
-  display: inline-block;
-  margin: 0;
 }
 
 ul {
