@@ -22,12 +22,6 @@ $track-color: #ccc;
 
 
 /* ----- MIXINS ----- */
-@mixin track {
-	box-sizing: border-box;
-	border: none;
-	height: $track-height;
-	background: $track-color;
-}
 
 @mixin thumb {
 	box-sizing: border-box;
@@ -36,17 +30,15 @@ $track-color: #ccc;
 	background: #25aae1;
 }
 
+@mixin track {
+	box-sizing: border-box;
+	border: none;
+	height: $track-height;
+	background: $track-color;
+}
+
 
 /* ----- MEDIA QUERIES ----- */
-@media screen and (min-width: 1400px) {
-	.container {
-		max-width: 1400px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-};
-
-
 @media screen and (max-width: 857px) {
 	.doctorImage {
 		display: block;
@@ -84,6 +76,14 @@ $track-color: #ccc;
 }
 }
 
+@media screen and (min-width: 1400px) {
+	.container {
+		max-width: 1400px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+};
+
 
 /* ----- ELEMENTS ----- */
 a:link, a:visited, a:hover, a:active {
@@ -92,29 +92,6 @@ a:link, a:visited, a:hover, a:active {
 
 body {
 	font-family: 'Cabin', sans-serif;
-}
-
-[type="range"] {
-	margin: 0;
-	padding: 0;
-	height: $thumb-height;
-	background: transparent;
-	width: 100%;
-	&::-webkit-slider-thumb {-webkit-appearance: none;}
-	&::-webkit-slider-runnable-track {@include track;}
-	&::-moz-range-track {@include track;}
-	&::-moz-focus-outer {border: 0;}
-	&::-ms-track {@include track;}
-	&::-moz-range-thumb { @include thumb;}
-	&::-ms-tooltip {display: none;}
-	&::-ms-thumb {
-		margin-top: 0;
-		@include thumb;
-	}
-	&::-webkit-slider-thumb {
-		margin-top: .5*($track-height - $thumb-height);
-		@include thumb;
-	}
 }
 
 embed {
@@ -145,6 +122,30 @@ li {
 	display: inline-block;
 	margin:0;
 }
+
+[type="range"] {
+	margin: 0;
+	padding: 0;
+	height: $thumb-height;
+	background: transparent;
+	width: 100%;
+	&::-webkit-slider-thumb {-webkit-appearance: none;}
+	&::-webkit-slider-runnable-track {@include track;}
+	&::-moz-range-track {@include track;}
+	&::-moz-focus-outer {border: 0;}
+	&::-ms-track {@include track;}
+	&::-moz-range-thumb { @include thumb;}
+	&::-ms-tooltip {display: none;}
+	&::-ms-thumb {
+		margin-top: 0;
+		@include thumb;
+	}
+	&::-webkit-slider-thumb {
+		margin-top: .5*($track-height - $thumb-height);
+		@include thumb;
+	}
+}
+
 ul {
 	list-style-type:none;
 	padding-left: 0;
