@@ -1,7 +1,7 @@
 /*Checks for 'enter' keydown after typing in zip. The search button also accepts a onClick event (see in HTML). If the event is triggered, then it calls a function to validate the zip code*/
 const zipCodeInput = document.getElementById("zipCodeField");
 zipCodeInput.addEventListener('keydown', function (event) {
-    if (event.code == "Enter") {
+    if (event.code == "Enter" || event.code == "NumpadEnter") {
         validateZipCode();
     }
 });
