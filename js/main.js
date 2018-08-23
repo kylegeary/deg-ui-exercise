@@ -6,7 +6,6 @@ zipCodeInput.addEventListener('keydown', function (event) {
     }
 });
 
-
 const range = document.getElementById("mileRange");
 range.addEventListener("input", function (event) {
     event.preventDefault;
@@ -16,25 +15,22 @@ range.addEventListener("input", function (event) {
 
 /*validates zip code with regex and displays 'x miles from zip'. If the zip is not valid, then it hides some of the divs.*/
 function validateZipCode() {
-    let zipCode = document.getElementById("zipCodeField").value;
-    let displayDistance = document.getElementById("distanceFromZip");
-    let range = document.getElementById("mileRange").value;
+    let zipCode = document.querySelector("#zipCodeField").value;
+    let displayDistance = document.querySelector("#distanceFromZip");
+    let range = document.querySelector("#mileRange").value;
     let valid = /^[0-9]{5}?$/.test(zipCode);
-    let resultAmountText = document.getElementById("resultAmountText");
+    let resultAmountText = document.querySelector("#resultAmountText");
     let results = document.querySelector(".results");
     if (valid && range == 30) {
         displayDistance.innerText = "CURRENT: ALL MILES FROM " + zipCode;
         document.querySelector('.subContainer').style.visibility = "visible";
         results.style.display = "block";
         resultAmountText.style.display = "block";
-
-
     } else if (valid && range < 30) {
         displayDistance.innerText = "CURRENT: " + range + " MILES FROM " + zipCode;
         document.querySelector('.subContainer').style.visibility = "visible";
         results.style.display = "block";
         resultAmountText.style.display = "block";
-
     } else {
         displayDistance.innerText = "";
         results.style.display = "none";
@@ -44,9 +40,9 @@ function validateZipCode() {
 }
 
 function displayDistance() {
-    let zipCode = document.getElementById("zipCodeField").value;
-    let range = document.getElementById("mileRange").value;
-    let displayDistance = document.getElementById("distanceFromZip");
+    let zipCode = document.querySelector("#zipCodeField").value;
+    let range = document.querySelector("#mileRange").value;
+    let displayDistance = document.querySelector("#distanceFromZip");
     let valid = /^[0-9]{5}?$/.test(zipCode);
     if (valid) {
         if (range == 30) {
@@ -59,20 +55,6 @@ function displayDistance() {
     }
     getDoctors();
 }
-
-/*Gets gender preference*/
-const form = document.querySelector("form");
-const log = document.querySelector("#log");
-
-form.addEventListener("input", function (event) {
-
-    var data = new FormData(form);
-    for (const entry of data) {
-        output = entry[1] + "\r";
-    };
-    event.preventDefault();
-    getDoctors();
-}, false);
 
 /*Filters JSON, adds content to HTML based on filters*/
 function getDoctors() {
@@ -327,8 +309,8 @@ function getDoctors() {
             }
         ]
     };
-    let range = document.getElementById("mileRange").value;
-    let gender = document.querySelector('input[name = "gender"]:checked').value;
+    let range = document.querySelector("#mileRange").value;
+    let gender = document.querySelector("input[name = 'gender']:checked").value;
     let returned = json.results;
     if (range < 30) {
         returned = returned.filter(i => { return i.locations.find(l => l.distance <= range) != undefined; });
@@ -350,6 +332,5 @@ function getDoctors() {
         })
         doctorsList += "<div class=\"doctorCard\"><ul class=\"doctorImages\"><li><img class=\"doctorImage\" src=\"" + c.image + "\"></li></ul><ul class=\"profileInfo\"><li class=\"fullName\">" + c.fullName + "<li><br>" + specialties + "</ul><br><ul class=\"locators\">" + locations + "</ul><br></div><hr>"
     });
-    document.getElementById("doctors").innerHTML = doctorsList;
-    console.log(returned);
+    document.querySelector("#doctors").innerHTML = doctorsList;
 };

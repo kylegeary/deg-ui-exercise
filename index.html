@@ -8,6 +8,7 @@
     <meta name="Find a doctor web application" content="Built by Kyle Geary, this find a doctor web application allows users to connect with providers based on distance from a given zip code and gender preference.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
+    <script defer src="js/main.js"></script>
 </head>
 
 <body>
@@ -57,18 +58,15 @@
                         Gender
                     </p>
                     <!-- Radio buttons for gender preference-->
-                    <form id="genderInput">
-                        <input type="radio" id="genderChoiceOne" name="gender" value="Male">
+                        <input type="radio" id="genderChoiceOne" name="gender" value="Male" onclick="getDoctors()">
                         <label for="genderChoiceOne"> Male</label>
                         <br>
-                        <input type="radio" id="genderChoiceTwo" name="gender" value="Female">
+                        <input type="radio" id="genderChoiceTwo" name="gender" value="Female" onclick="getDoctors()">
                         <label for="genderChoiceTwo">Female</label>
                         <br>
-                        <input type="radio" id="genderChoiceThree" name="gender" value="" checked>
-                        <label for="genderChoiceThree">No preference</label>
-                    </form>
-                    <pre id="log">
-                </pre>
+                        <input type="radio" id="genderChoiceThree" name="gender" value="" checked onclick="getDoctors()">
+                        <label for="genderChoiceThree" >No preference</label>
+
                 </aside>
                 <summary class="results">
                     <p id="resultAmountText">
@@ -79,7 +77,7 @@
             </div>
         </section>
     </main>
-    <script src="js/main.js" async defer></script>
+
 </body>
 
 </html>
