@@ -154,7 +154,7 @@
             "lastName": "Test",
             "specialties": [],
             "url": "#",
-            "image": null,
+            "image": "../assets/drtwo.png",
             "gender": null,
             "bio": "",
             "locations": [
