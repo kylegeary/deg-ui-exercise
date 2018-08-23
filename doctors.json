@@ -8,7 +8,7 @@
                 "Neurology"
             ],
             "url": "#",
-            "image": "../assets/avatar.png",
+            "image": "assets/avatar.png",
             "gender": "Male",
             "bio": "",
             "locations": [
@@ -58,7 +58,7 @@
                 "Neurology"
             ],
             "url": "#",
-            "image": "../assets/drheap.jpg",
+            "image": "assets/drheap.jpg",
             "gender": "Male",
             "bio": "Dr. Ryan \"Doogie\" Heap is the son of Ronnie (Harrison Ford) and JoJo Heap (Linda Hamilton). As a child, he twice survived early-stage pediatric leukemia after his father—a family physician—discovered suspicious bruising. The experience contributed to the younger Heap's desire to enter medicine.",
             "locations": [
@@ -105,7 +105,7 @@
             "lastName": "Smith",
             "specialties": [],
             "url": "#",
-            "image": "../assets/avatar.png",
+            "image": "assets/avatar.png",
             "gender": "Female",
             "bio": "",
             "locations": [
@@ -131,7 +131,7 @@
                 "English"
             ],
             "url": "#",
-            "image": "../assets/avatar.png",
+            "image": "assets/avatar.png",
             "gender": null,
             "bio": "",
             "locations": [
@@ -154,7 +154,7 @@
             "lastName": "Test",
             "specialties": [],
             "url": "#",
-            "image": "../assets/drtwo.png",
+            "image": "assets/drtwo.png",
             "gender": null,
             "bio": "",
             "locations": [
@@ -180,7 +180,7 @@
                 "Neurology"
             ],
             "url": "#",
-            "image": "../assets/avatar.png",
+            "image": "assets/avatar.png",
             "gender": "Female",
             "bio": "",
             "locations": [
@@ -217,7 +217,7 @@
                 "Neurology"
             ],
             "url": "#",
-            "image": "../assets/avatar.png",
+            "image": "assets/avatar.png",
             "gender": "Female",
             "bio": "",
             "locations": [
