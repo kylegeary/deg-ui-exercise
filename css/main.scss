@@ -139,6 +139,7 @@ li {
 }
 
 [type="range"] {
+	-webkit-appearance: none;
 	margin: 0;
 	padding: 0;
 	height: $thumb-height;
@@ -159,6 +160,11 @@ li {
 		margin-top: .5*($track-height - $thumb-height);
 		@include thumb;
 	}
+}
+
+input[type=range]:focus {
+	outline: none;
+	&::-webkit-slider-runnable-track { @include track}
 }
 
 ul {
